@@ -1,1 +1,12 @@
-Hello
+<h1> Welcome to Looping </h1>
+
+<%= form_for User.new, url: beta_signup_path, html: {class: 'form-inline', role: 'form'} do |f| %>
+  <div class="form-group">
+  <div class="input-group">
+    <%= f.label :email, class: 'sr-only' %>
+    <div class="input-group-addon">@</div>
+    <%= f.email_field :email, placeholder: 'Enter Email', class: 'form-control' %> 
+  </div>
+</div>
+<%= f.submit "Submit", :class => "btn btn-default" %>
+<% end %>
