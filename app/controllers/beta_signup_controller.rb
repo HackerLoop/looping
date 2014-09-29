@@ -1,6 +1,7 @@
 class BetaSignupController < ApplicationController
   def create
     @user = User.new user_params.merge(waiting: true)
+    @user.assign_referrer(params[:ref])
     @user.generate_password!
 
     if @user.save
@@ -11,6 +12,6 @@ class BetaSignupController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :referrer_code)
+    params.require(:user).permit(:email)
   end
 end

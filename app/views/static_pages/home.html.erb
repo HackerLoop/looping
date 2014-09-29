@@ -6,7 +6,7 @@
     <%= f.label :email, class: 'sr-only' %>
     <div class="input-group-addon">@</div>
     <%= f.email_field :email, placeholder: 'Enter Email', class: 'form-control' %> 
-    <%= f.hidden_field :referral_code %>
+    <input type="hidden" name="ref">
   </div>
 </div>
 <%= f.submit "Submit", :class => "btn btn-default" %>

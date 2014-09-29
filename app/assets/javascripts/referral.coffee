@@ -1,4 +1,4 @@
 $ ->
   $('#new_user').each ->
     referral_code = $.getQuery('ref')
-    $(@).find('#user_referral_code').val(referral_code)
+    $(@).find('input[name=ref]').val(referral_code)

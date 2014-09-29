@@ -6,10 +6,18 @@ class User < ActiveRecord::Base
   has_many   :referrals, class_name: 'User', foreign_key: 'referrer_id'
 
   validates :referral_code, uniqueness: true
-  after_create :create_referral_code
+  before_create :create_referral_code
 
   def generate_password!
     self.password = Devise.friendly_token.first(9)
+  end
+
+  def assign_referrer referrer_code
+    referrer = User.find_by_referral_code referrer_code
+
+    if referrer
+      self.referrer_id = referrer.id
+    end
   end
 
   private
