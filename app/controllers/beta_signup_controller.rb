@@ -7,7 +7,7 @@ class BetaSignupController < ApplicationController
     if @user.save
       redirect_to root_path(ref: @user.referral_code)
     else
-      raise @user.errors.inspect
+      redirect_to :back, alert: "Email #{@user.errors[:email]}"
     end
   end
 
