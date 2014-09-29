@@ -1,0 +1,9 @@
+<h1>Thanks for submitting !</h1>
+
+<p>
+  Your email is <%= @user.email %> and we know it.
+  You can give everyone this link to get access first. 
+  
+  <em><%= link_to root_url(ref: @user.referral_code), root_url(ref: @user.referral_code) %></em>
+</p>
+
