@@ -7,3 +7,13 @@
   <em><%= link_to root_url(ref: @user.referral_code), root_url(ref: @user.referral_code) %></em>
 </p>
 
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @user.referral_count_percentage_to_biggest_prize%>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @user.referral_count_percentage_to_biggest_prize %>%">
+    <span class="sr-only"><%= @user.referral_count_percentage_to_biggest_prize %>% Complete (success)</span>
+  </div>
+</div>
+
+<% User::REFERRAL_STEPS.each do |count| %>
+  <%= render "prize_#{count}" %>
+<% end %>
+

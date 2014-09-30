@@ -30,6 +30,16 @@ class User < ActiveRecord::Base
     UserMailer.delay.referral_notification_email(self)
   end
 
+  def referral_count_percentage_to_biggest_prize
+    count = referrals.count
+
+    if count <= REFERRAL_STEPS.last
+      (count / REFERRAL_STEPS.last.to_f) * 100
+    else
+      100
+    end
+  end
+
   def referral_step
     step_count = referrals.count
 
