@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.6'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
@@ -11,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise', '~> 3.3.0'
+gem 'sidekiq', '~> 3.2.4'
+gem 'unicorn', '~> 4.8.3'
 
 gem "less-rails"
 gem "twitter-bootstrap-rails"
