@@ -6,6 +6,11 @@ class BetaSignupController < ApplicationController
 
     if @user.save
       @user.send_welcome_email
+
+      if @user.referrer.present?
+        @user.referrer.send_referral_notification
+      end
+
       redirect_to beta_signup_thanks_path(ref: @user.referral_code)
     else
       redirect_to :back, alert: "Email #{@user.errors[:email].first}"

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  REFERRAL_STEPS = [5, 10 ,15]
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -22,6 +24,20 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.delay.welcome_email(self)
+  end
+
+  def send_referral_notification
+    UserMailer.delay.referral_notification_email(self)
+  end
+
+  def referral_step
+    step_count = referrals.count
+
+    if REFERRAL_STEPS.include?(step_count)
+      [:step, step_count]
+    else
+      [:standard, step_count]
+    end
   end
 
   private

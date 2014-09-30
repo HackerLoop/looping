@@ -6,5 +6,13 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def create_user referral_code=nil
+    @@index ||= 0
+    @@index = @@index + 1
+
+    user = User.new(:email => "email#{@@index}@looping.local", :password => "password")
+    user.assign_referrer(referral_code) if referral_code
+    user.save
+    user
+  end
 end
