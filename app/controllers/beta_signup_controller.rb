@@ -8,7 +8,7 @@ class BetaSignupController < ApplicationController
       @user.send_welcome_email
 
       if @user.referrer.present?
-        @user.referrer.send_referral_notification
+        @user.send_notification_to_referrer
       end
 
       redirect_to beta_signup_thanks_path(ref: @user.referral_code)

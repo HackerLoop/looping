@@ -26,8 +26,12 @@ class User < ActiveRecord::Base
     UserMailer.delay.welcome_email(self)
   end
 
-  def send_referral_notification
-    UserMailer.delay.referral_notification_email(self)
+  def send_new_referred_user_notification referred_user
+    UserMailer.delay.referral_notification_email(self, referred_user)
+  end
+
+  def send_notification_to_referrer
+    referrer.send_new_referred_user_notification(self)
   end
 
   def referral_count_percentage_to_biggest_prize

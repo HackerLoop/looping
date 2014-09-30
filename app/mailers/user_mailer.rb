@@ -8,9 +8,10 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Thanks for joining Looping!')
   end
 
-  def referral_notification_email user
-    @user = user
-    @url  = root_url(ref: @user.referral_code)
+  def referral_notification_email user, referred_user
+    @user          = user
+    @referred_user = referred_user
+    @url           = root_url(ref: @user.referral_code)
 
     @case, @count = @user.referral_step
 
