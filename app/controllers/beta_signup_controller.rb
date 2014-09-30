@@ -5,9 +5,10 @@ class BetaSignupController < ApplicationController
     @user.generate_password!
 
     if @user.save
+      @user.send_welcome_email
       redirect_to beta_signup_thanks_path(ref: @user.referral_code)
     else
-      redirect_to :back, alert: "Email #{@user.errors[:email]}"
+      redirect_to :back, alert: "Email #{@user.errors[:email].first}"
     end
   end
 

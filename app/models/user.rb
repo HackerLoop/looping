@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def send_welcome_email
+    UserMailer.delay.welcome_email(self)
+  end
+
   private
   def create_referral_code
     referral_code = Devise.friendly_token.first(8)
