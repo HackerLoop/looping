@@ -16,20 +16,14 @@ gem 'unicorn', '~> 4.8.3'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
+group :development do
+  gem 'better_errors'
+end
+
 group :development, :test do 
   gem 'spring'
   gem 'pry'
   gem 'binding_of_caller'
-  gem 'better_errors'
-
-  gem "guard"
-  gem "guard-bundler"
-  gem "guard-rspec"
-  gem "guard-spring"
-  gem 'spring-commands-rspec'
-  gem "rb-inotify", require: false
-  gem "rb-fsevent", require: false
-  gem "rb-fchange", require: false
 end
 
 # Comment if you're not deploying this on heroku
