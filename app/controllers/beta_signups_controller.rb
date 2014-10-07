@@ -1,4 +1,4 @@
-class BetaSignupController < ApplicationController
+class BetaSignupsController < ApplicationController
   before_action :redirect_if_user_exists, only: 'create'
 
   def create

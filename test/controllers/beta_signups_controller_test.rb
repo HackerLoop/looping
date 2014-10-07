@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BetaSignupControllerTest < ActionController::TestCase
+class BetaSignupsControllerTest < ActionController::TestCase
   def setup
     @user = users(:one)
   end
