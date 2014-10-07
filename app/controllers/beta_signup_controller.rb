@@ -1,4 +1,6 @@
 class BetaSignupController < ApplicationController
+  before_action :redirect_if_user_exists, only: 'create'
+
   def create
     @user = User.new user_params.merge(waiting: true)
     @user.assign_referrer(params[:ref])
@@ -23,5 +25,13 @@ class BetaSignupController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email)
+  end
+
+  def redirect_if_user_exists
+    @user = User.find_by_email(user_params[:email])
+
+    if @user
+      redirect_to beta_signup_thanks_path(ref: @user.referral_code)
+    end
   end
 end
