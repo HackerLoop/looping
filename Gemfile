@@ -13,20 +13,21 @@ gem 'devise', '~> 3.3.0'
 gem 'sidekiq', '~> 3.2.4'
 gem 'unicorn', '~> 4.8.3'
 
+gem 'haml'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
 group :development do
-  gem 'better_errors'
+	gem 'better_errors'
 end
 
 group :development, :test do 
-  gem 'spring'
-  gem 'pry'
-  gem 'binding_of_caller'
+	gem 'spring'
+	gem 'pry'
+	gem 'binding_of_caller'
 end
 
 # Comment if you're not deploying this on heroku
 group :production do
-  gem 'rails_12factor'
+	gem 'rails_12factor'
 end
