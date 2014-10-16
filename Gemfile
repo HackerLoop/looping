@@ -25,9 +25,11 @@ group :development, :test do
 	gem 'spring'
 	gem 'pry'
 	gem 'binding_of_caller'
+	gem 'sqlite3'
 end
 
 # Comment if you're not deploying this on heroku
 group :production do
+	gem 'pg'
 	gem 'rails_12factor'
 end
