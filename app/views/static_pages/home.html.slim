@@ -1,0 +1,14 @@
+.container-fluid
+  .row
+    .col-sm-6.col-sm-offset-5.content 
+      = image_tag "kanavape.svg", :class => "logo"
+      .title Legal Cannabis E-Cigarette
+      .subtitle BE THE FIRST TO KNOW
+      = form_for User.new, url: beta_signup_path, html: {class: 'form-inline', role: 'form'} do |f|
+        .form-group
+          .input-group.input-group-lg
+            = f.label :email, class: 'sr-only'
+            = f.email_field :email, placeholder: 'Enter Email', class: 'form-control'
+            input name="ref" type="hidden"
+        = f.submit "Submit", :class => "btn btn-success btn-lg"
+      .instructions By entering my email, I certify that I am over the age of 21

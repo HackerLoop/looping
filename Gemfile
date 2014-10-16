@@ -13,7 +13,7 @@ gem 'devise', '~> 3.3.0'
 gem 'sidekiq', '~> 3.2.4'
 gem 'unicorn', '~> 4.8.3'
 
-gem 'haml'
+gem 'slim'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
