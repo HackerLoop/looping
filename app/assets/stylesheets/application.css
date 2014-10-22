@@ -15,22 +15,19 @@
  */
 
 
-/*!
-* full image layout
- * Landing page by Hackerloop
- */
 
 
 /*
 Typo
 */
 
-.fullbackground {
+#header{
     background: url("background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    padding-bottom: 8em;
 }
 
 .logo {

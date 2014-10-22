@@ -1,14 +1,68 @@
-.container-fluid
-  .row
-    .col-sm-6.col-sm-offset-5.content 
-      = image_tag "kanavape.svg", :class => "logo"
-      .title Legal Cannabis E-Cigarette
-      .subtitle BE THE FIRST TO KNOW
-      = form_for User.new, url: beta_signup_path, html: {class: 'form-inline', role: 'form'} do |f|
-        .form-group
-          .input-group.input-group-lg
-            = f.label :email, class: 'sr-only'
-            = f.email_field :email, placeholder: 'Enter Email', class: 'form-control'
-            input name="ref" type="hidden"
-        = f.submit "Submit", :class => "btn btn-success btn-lg"
-      .instructions By entering my email, I certify that I am over the age of 21
+div#header
+  .container-fluid
+    div.row
+      div.col-sm-6.col-sm-offset-5.content 
+        = image_tag "kanavape.svg", :class => "logo"
+        div.title Legal Cannabis E-Cigarette
+        div.subtitle BE THE FIRST TO KNOW
+        = form_for User.new, url: beta_signup_path, html: {class: 'form-inline', role: 'form'} do |f|
+          div.form-group
+            div.input-group.input-group-lg
+              = f.label :email, class: 'sr-only'
+              = f.email_field :email, placeholder: 'Enter Email', class: 'form-control'
+              input name="ref" type="hidden"
+          = f.submit "Submit", :class => "btn btn-success btn-lg"
+        div.instructions By entering my email, I certify that I am over the age of 21
+div#section
+  .container-fluid
+    div.row
+      div.col-md-12
+div#section
+  .container-fluid
+    div.row
+      div.col-md-12
+div#section
+  .container-fluid
+    div.row
+      div.col-md-12
+div#section
+  .container-fluid
+    div.row
+      div.col-md-4
+        div.title AVALAIBLE IN DECEMBER 2014
+        div.subtitle BE THE FIRST TO KNOW
+        = form_for User.new, url: beta_signup_path, html: {class: 'form-inline', role: 'form'} do |f|
+          div.form-group
+            div.input-group.input-group-lg
+              = f.label :email, class: 'sr-only'
+              = f.email_field :email, placeholder: 'Enter Email', class: 'form-control'
+              input name="ref" type="hidden"
+          = f.submit "Submit", :class => "btn btn-success btn-lg"
+        div.instructions By entering my email, I certify that I am over the age of 21
+      div.col-md-8
+        = image_tag "kanavape.svg", :class => "logo"
+
+div#section
+  .container-fluid
+    div.row
+      div.col-md-12
+        p We made Kanavape blabla
+    div.row
+      div.col-md-12
+      span= image_tag "kanavape.svg", :class => "logo"
+      span= image_tag "kanavape.svg", :class => "logo"
+
+
+div#section
+  .container-fluid
+    div.row
+      div.col-md-12
+        div.subtitle BE THE FIRST TO KNOW
+        = form_for User.new, url: beta_signup_path, html: {class: 'form-inline', role: 'form'} do |f|
+          div.form-group
+            div.input-group.input-group-lg
+              = f.label :email, class: 'sr-only'
+              = f.email_field :email, placeholder: 'Enter Email', class: 'form-control'
+              input name="ref" type="hidden"
+          = f.submit "Submit", :class => "btn btn-success btn-lg"
+        div.instructions By entering my email, I certify that I am over the age of 21
